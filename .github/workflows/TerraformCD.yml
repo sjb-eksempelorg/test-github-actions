@@ -11,9 +11,6 @@ permissions:
   id-token: write
   contents: read
 
-env:
-  PROJECT_NAME: "build_deploy" 
-
 jobs:
   deploy-dev:
     name: Deploy to DEV
@@ -26,7 +23,7 @@ jobs:
       TF_IN_AUTOMATION: "true"
       ENVIRONMENT: "dev"
       LOCATION: "norwayeast"
-      PROJECT_NAME: "$PROJECT_NAME"
+      PROJECT_NAME: "sjb-tester"
     
     steps:
       - name: Checkout code
@@ -91,7 +88,7 @@ jobs:
       TF_IN_AUTOMATION: "true"
       ENVIRONMENT: "test"
       LOCATION: "norwayeast"
-      PROJECT_NAME: "$PROJECT_NAME"
+      PROJECT_NAME: "sjb-tester"
     
     steps:
       - name: Checkout code
@@ -156,7 +153,7 @@ jobs:
       TF_IN_AUTOMATION: "true"
       ENVIRONMENT: "prod"
       LOCATION: "norwayeast"
-      PROJECT_NAME: "$PROJECT_NAME"
+      PROJECT_NAME: "sjb-tester"
     
     steps:
       - name: Checkout code
