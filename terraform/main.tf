@@ -3,17 +3,18 @@ resource "random_string" "suffix" {
   length  = 6
   special = false
   upper   = false
+  number = false
 }
 
 # Resource Group
 resource "azurerm_resource_group" "main" {
-  name     = "rg-${var.project_name}-${var.environment}"
+  name     = "rg-${var.project-name}-${var.environment}"
   location = var.location
 
   tags = {
     Environment = var.environment
     ManagedBy   = "Terraform"
-    Project     = var.project_name
+    Project     = var.project-name
     Test        = "TestValue"
     Test2       = "Test CD pipe"
   }
@@ -21,7 +22,7 @@ resource "azurerm_resource_group" "main" {
 
 # Storage Account
 resource "azurerm_storage_account" "main" {
-  name                = "st${var.project_name}${var.environment}${random_string.suffix.result}"
+  name                = "st${var.project-name}${var.environment}${random_string.suffix.result}"
   resource_group_name = azurerm_resource_group.main.name
   location            = azurerm_resource_group.main.location
 

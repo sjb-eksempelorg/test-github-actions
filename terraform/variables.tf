@@ -14,7 +14,7 @@ variable "location" {
   default     = "norwayeast"
 }
 
-variable "project_name" {
+variable "project-name" {
   description = "Project name used in resource naming"
   type        = string
   default     = "test-deploy-"
