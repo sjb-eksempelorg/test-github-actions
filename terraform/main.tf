@@ -15,7 +15,7 @@ resource "azurerm_resource_group" "main" {
     ManagedBy   = "Terraform"
     Project     = var.project_name
     Test        = "TestValue"
-    Test2       = "TestValue2"
+    Test2       = "Test CD pipe"
   }
 }
 
