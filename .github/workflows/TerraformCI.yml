@@ -55,7 +55,7 @@ jobs:
         continue-on-error: true
 
       - name: Terraform Init
-        working-directory: ${{ env.WORKDIR }}/terraform
+        working-directory: ${{ env.WORKDIR }}
         id: init
         run: |
           terraform init \
@@ -65,7 +65,7 @@ jobs:
             -no-color
       
       - name: Terraform Validate
-        working-directory: ${{ env.WORKDIR }}/terraform
+        working-directory: ${{ env.WORKDIR }}
         id: validate
         run: terraform validate -no-color
 
